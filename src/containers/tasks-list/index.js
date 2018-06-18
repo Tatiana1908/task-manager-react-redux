@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import TasksList from '../../components/tasks-list'
-import { getTasks } from '../../store/tasks-list/action'
+import { getTasks } from '../../store/actions'
 
 const mapStateToProps = state => {
     return {
@@ -9,10 +9,8 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        getTasks: () => dispatch(getTasks())
-    }
+const mapDispatchToProps = {
+    getTasks
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TasksList)

@@ -1,12 +1,9 @@
-const  getTasksHandler = (state) => {
-    return {state};
 
-};
 const initialState = {
     tasks: [
         {
             description: 'task1',
-            date: '2018-06-18',
+            date: '2018-06-19',
             expired: false,
             id: 1,
         },
@@ -31,17 +28,14 @@ const initialState = {
     ]
 
 }
+
 export default (state = initialState, action) => {
-    // const { type, payload } = action.js;
+    const {type, payload} = action
     switch(type) {
-        case 'GET_TASKS':
-            return state.tasks;
-        // case 'REMOVE_ITEM':
-        //     return removeItemHandler(state,payload);
-        // case 'CHECK_ITEM':
-        //     return checkItemHandler(state,payload);
-        // case 'EDIT_ITEM':
-        //     return editItemHandler(state,payload);
+        case 'getTasks':
+            return state;
+        case 'addNewTask':
+            return [...state.tasks, payload];
         default:
             return state;
     }

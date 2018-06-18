@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
-
-import Todo from '../../containers/tasks-list'
+import Task from '../task'
 
 export default class TasksList extends Component {
-    componentDidMount() {
+    componentWillMount() {
         this.props.getTasks()
     }
 
     render() {
-        if (this.props.tasks.length === 0) {
+        if (this.props.tasksList.length === 0) {
             return <h2>Now any tasks</h2>
         }
 
         return (
             <div className='tasks-wrapper'>
-                {this.props.tasksList.map(task => console.log(task) )}
+                {this.props.tasksList.map(task => <Task taskItem={task} key={task.id}/> )}
             </div>
         )
     }
