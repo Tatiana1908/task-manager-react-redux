@@ -1,0 +1,136 @@
+
+.add-task-btn{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.add-task-overlay, .expired-tasks-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .3);
+  z-index: 99;
+}
+.expired-tasks-modal .number{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.remove-task{
+  margin: 0 auto;
+  display: block;
+}
+.expired-tasks-modal .next, .expired-tasks-modal .prev{
+  cursor: pointer;
+  position: absolute;
+  top: 35%;
+  font-size: 40px;
+  background: inherit;
+  border: none;
+  border: none;
+}
+.expired-tasks-modal .next:focus, .expired-tasks-modal .prev:focus{
+  outline: none;
+}
+.expired-tasks-modal .next.hidden, .expired-tasks-modal .prev.hidden{
+  opacity: .3;
+  cursor: auto;
+}
+.expired-tasks-modal .next{
+  right: 20px;
+}
+.expired-tasks-modal .prev{
+  left: 20px;
+}
+.add-task-modal, .expired-tasks-modal{
+  background: #fff;
+  position: absolute;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.expired-tasks-modal {
+  padding-top: 40px;
+  text-align: center;
+  width: 350px;
+}
+.tasks-wrapper{
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.task-item{
+  list-style: none;
+  width: 25%;
+  padding: 20px 20px 50px;
+  margin: 10px;
+  border: 1px solid lightgrey;
+  position: relative;
+}
+.task-item-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.task-desc{
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.remove-item-btn{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: none;
+  cursor: pointer;
+}
+.task-item:hover .remove-item-btn{
+  display: block;
+}
+.input-block{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 350px;
+  padding: 10px 0;
+}
+.remove-item-btn{
+  background: inherit;
+  border: none;
+  transform: rotate(45deg);
+  font-weight: 800;
+  font-size: 30px;
+}
+.remove-item-btn:focus{
+  outline: none;
+}
+.error-wrap{
+  padding-bottom: 15px;
+  color: red;
+  text-align: center;
+}
+.btn-default{
+  background: lightsteelblue;
+  padding: 10px 20px;
+  border: none;
+  margin: 0 10px;
+}
+.btn-default:hover{
+  cursor: pointer;
+  box-shadow: 1px 1px 9px grey;
+}
+.input-default{
+  padding: 5px;
+}
+.warning-text{
+  color: red;
+  text-align: center;
+  margin: 50px 0;
+}
