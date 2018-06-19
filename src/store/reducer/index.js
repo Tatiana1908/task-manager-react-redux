@@ -28,6 +28,15 @@ const initialState = {
     ]
 
 }
+const updateExpiredStatusHandler = (state, id) =>{
+    let newTaskList = state.tasks.map(task => {
+        if (task.id === id){
+            return {...task, expired: true}
+        }
+        return task
+    })
+    return {...state, tasks: newTaskList}
+}
 
 export default (state = initialState, action) => {
     const {type, payload} = action
@@ -35,7 +44,14 @@ export default (state = initialState, action) => {
         case 'getTasks':
             return state;
         case 'addNewTask':
-            return [...state.tasks, payload];
+            return {...state,
+                tasks: [ ...state.tasks, payload]};
+        case 'removeTask':
+            return {...state,
+                tasks: [ ...state.tasks.filter(task => task.id !== payload)]};
+        case 'updateExpiredStatus':
+            return updateExpiredStatusHandler(state, payload)
+
         default:
             return state;
     }

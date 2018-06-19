@@ -2,9 +2,8 @@ import { createAction } from 'redux-actions'
 
 export const getTasks = createAction('getTasks')
 
-export const addNewTask = (newTask) => createAction({
-    type: 'addNewTask',
-    payload: newTask
-})
+export const addNewTask = createAction('addNewTask')
 
-// export const addTask = createAction('addTask')
+export const removeTask = createAction('removeTask')
+
+export const updateExpiredStatus = createAction('updateExpiredStatus')

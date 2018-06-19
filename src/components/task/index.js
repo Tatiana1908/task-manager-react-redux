@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 export default class Task extends Component {
 
   runTimer() {
-    let {date} = this.props.taskItem
+    let {date, id} = this.props.taskItem
     const msInHour = 3600000
     const msInMinute = 60000
     const msInSecond = 1000
@@ -16,7 +16,7 @@ export default class Task extends Component {
     }
 
     interval = setInterval(() => {
-      // if (!this.timerElement) return clearInterval(interval)
+      if (!this.timerElement) return clearInterval(interval)
      
       if (((this.time - Date.now()) > 0)) {
         const hours = (this.time - Date.now()) / msInHour
@@ -28,17 +28,20 @@ export default class Task extends Component {
       }
       if (this.props.taskItem.expired) return null
 
-      // this.props.updateExpiredStatus(id)
+      this.props.updateExpiredStatus(id)
       handleOnTimeOver()
       this.timerElement.innerHTML = '00 : 00 : 00'
 
       return true
     }, 1000)
   }
+  onRemoveHandler = (e) => {
+    e.preventDefault()
+    this.props.removeTask(this.props.taskItem.id)
+  }
 
   render() {
-      const { description, id } = this.props.taskItem
-      console.log(this.props.taskItem)
+    const { description, id } = this.props.taskItem
 
     return (
       <li className="task-item" id={id}>
