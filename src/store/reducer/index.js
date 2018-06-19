@@ -3,7 +3,7 @@ const initialState = {
     tasks: [
         {
             description: 'task1',
-            date: '2018-06-19',
+            date: '2018-06-22',
             expired: false,
             id: 1,
         },
@@ -37,6 +37,7 @@ const updateExpiredStatusHandler = (state, id) =>{
     })
     return {...state, tasks: newTaskList}
 }
+
 
 export default (state = initialState, action) => {
     const {type, payload} = action

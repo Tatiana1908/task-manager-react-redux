@@ -6,6 +6,7 @@ import './App.css';
 import store from './store/index'
 import TasksList from './containers/tasks-list'
 import Modal from './containers/add-new-task-modal'
+import ExpiredTasksModal from './containers/expired-tasks-modal'
 
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
         <div>
           <TasksList />
           <Modal />
+          <ExpiredTasksModal />
         </div>
       </Provider>
     );
